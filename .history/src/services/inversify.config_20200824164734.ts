@@ -13,7 +13,7 @@ import { UserService } from './User/user.service';
 
 const bindings = new ContainerModule((bind: interfaces.Bind) => {
   _.each(
-    [ConfigService, DatabaseService, SubscriptionPlanService, UserService],
+    [ConfigService, DatabaseService, SubscriptionPlanService],
     (Service: any) => {
       bind(Service).to(Service).inSingletonScope();
 

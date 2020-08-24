@@ -6,7 +6,7 @@ import GraphQLJSON, { GraphQLJSONObject } from 'graphql-type-json';
 import _ from 'lodash';
 
 import { ConfigModule } from './config/config.module';
-import { servicesContainer } from './services/inversify.config';
+ import { servicesContainer } from './services/inversify.config';
 import { ServicesModule } from './services/service.module';
 // import { SubscriptionPlanService } from './services/SubscriptionPlan/subscription_plan.service';
 import { UserService } from './services/User/user.service';
@@ -95,8 +95,11 @@ export class AppModule {
     // void s.findOne({ id: '257-A' });
     // void s.update({ name: 'Test Update name1' }, { id: '353-A' });
 
+
     // Debug user
-    const s = servicesContainer.get<UserService>(UserService);
+    const s = servicesContainer.get<UserService>(
+      UserService,
+    );
     void s.create({
       name: 'Test332212',
       email: '123test12@email.com',
@@ -108,5 +111,8 @@ export class AppModule {
     // void s.delete({ id: '257-A' });
     // void s.findOne({ id: '257-A' });
     // void s.update({ name: 'Test Update name1' }, { id: '353-A' });
+
+
+
   }
 }

@@ -23,7 +23,6 @@
     "postinstall": "patch-package",
     "migrate": "ts-node migrate.ts",
     "gen:typings": "ts-node src/generate-typings.ts"
-
   },
   "dependencies": {
     "-": "^0.0.1",
