@@ -42,12 +42,8 @@ export class IPaginationInfo {
     skip: number;
 }
 
-export class Hello {
-    name?: string;
-}
-
 export abstract class IQuery {
-    abstract sayHello(payload?: string): Hello | Promise<Hello>;
+    abstract hello(): string | Promise<string>;
 }
 
 export type date = any;

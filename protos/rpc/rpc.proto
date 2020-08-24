@@ -2,6 +2,7 @@ syntax = "proto3";
 package rpc;
 
 import "rpc/subscription_plan.proto";
+import "rpc/user.proto";
 
 service SubscriptionPlanService {
 
@@ -14,6 +15,20 @@ service SubscriptionPlanService {
   rpc Update(subscription_plan.UpdateSubscriptionPlanRequest) returns (subscription_plan.UpdateSubscriptionPlanResponse){}
 
   rpc Delete(subscription_plan.SubscriptionPlanFilter) returns (subscription_plan.DeleteSubscriptionPlanResponse){}
+
+}
+
+service UserService {
+
+  rpc FindAll(Empty) returns (user.UserResponse) {}
+
+  rpc FindOne(user.UserFilter) returns (user.User){}
+
+  rpc Create(user.UserInput) returns (user.User){}
+
+  rpc Update(user.UpdateUserRequest) returns (user.UpdateUserResponse){}
+
+  rpc Delete(user.UserFilter) returns (user.DeleteUserResponse){}
 
 }
 message Empty {}

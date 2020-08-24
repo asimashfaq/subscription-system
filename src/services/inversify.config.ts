@@ -9,10 +9,11 @@ import { DatabaseService } from './database/database.service';
 import { ServiceSymbol } from './IService';
 import { ServicesApp } from './services.app';
 import { SubscriptionPlanService } from './SubscriptionPlan/subscription_plan.service';
+import { UserService } from './User/user.service';
 
 const bindings = new ContainerModule((bind: interfaces.Bind) => {
   _.each(
-    [ConfigService, DatabaseService, SubscriptionPlanService],
+    [ConfigService, DatabaseService, SubscriptionPlanService, UserService],
     (Service: any) => {
       bind(Service).to(Service).inSingletonScope();
 
