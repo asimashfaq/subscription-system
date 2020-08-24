@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/tslint/config */
 import { IUser } from '../interfaces/user.interface';
 import { UserRole } from '../types/user.types';
 
@@ -27,7 +26,7 @@ export class Users implements Partial<IUser> {
   // not the  real implemetatation
   static generate_hashed_password(rawPassword: string): string {
     let hashedPassword = '';
-    hashedPassword = `!${rawPassword}`;
+     hashedPassword = `!${rawPassword}`;
     return hashedPassword;
   }
   // not the  real implemetatation

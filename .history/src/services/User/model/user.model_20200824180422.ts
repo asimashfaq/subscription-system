@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/tslint/config */
 import { IUser } from '../interfaces/user.interface';
 import { UserRole } from '../types/user.types';
 
@@ -19,7 +18,7 @@ export class Users implements Partial<IUser> {
   phone_number?: string;
   role?: UserRole;
   hashed_Password?: string;
-  //raw_password?: string;
+  //   raw_password?: string;
 
   constructor(payload?: Partial<IUser>) {
     Object.assign(this, payload);
@@ -27,7 +26,7 @@ export class Users implements Partial<IUser> {
   // not the  real implemetatation
   static generate_hashed_password(rawPassword: string): string {
     let hashedPassword = '';
-    hashedPassword = `!${rawPassword}`;
+     hashedPassword = `!${rawPassword}`;
     return hashedPassword;
   }
   // not the  real implemetatation

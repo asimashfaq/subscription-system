@@ -1,7 +1,5 @@
 /* eslint-disable complexity */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/tslint/config */
-
 import { injectable } from 'inversify';
 import _ from 'lodash';
 
@@ -73,7 +71,7 @@ export class UserService implements IUserService, IService {
       );
       // Make db call
       result = await this.dbService.create<User, Users>(
-        new Users({ ...payload, hashed_password }),
+        new Users({ ...payload, hashed_password}),
       );
       this.logger.debug('User added Successfully', result);
     } catch (e) {
